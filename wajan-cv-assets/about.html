@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | About Me</title>
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <meta name="keywords" content="Wajan, About Me, Bio, Qassim University, Computer Science" />
+</head>
+<body>
+  <header id="main-header" class="light">
+    <div class="logo">
+      <img src="WB-logo.png" alt="Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+        <li><a href="education.html">Education</a></li>
+		<li><a href="languages.html">Languages</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-mode" onclick="toggleMode()">
+      <div id="toggle-btn"><div class="slider">🌞</div></div>
+    </div>
+  </header>
+
+  <main class="about-main">
+    <div class="about-left">
+      <div class="overlay"></div>
+      <img src="Maroon.jpeg" alt="Wajan Background" />
+    </div>
+    <div class="about-right">
+      <div class="content-box">
+        <div class="content-box" id="about-slider">
+		  <div class="slide active" id="slide-1">
+			<h1>About Me</h1>
+			<p>
+			  I'm <strong>Wajan Albaqami</strong>, a Computer Science student at <strong>Qassim University</strong>, passionate about coding, web design, and cybersecurity — diverse fields that come together to build secure and impactful digital experiences.
+			  <br><br>
+			  I enjoy tackling creative challenges that blend logic, design, and security. Whether it's writing clean code, crafting intuitive user interfaces, or strengthening digital infrastructure, I strive to develop smart and secure technology.
+			  <br><br>
+			  I'm also interested in <strong>Game Programming 🎮</strong>, where creativity meets code to bring interactive ideas to life.
+			</p>
+			<p>
+			  For me, technology isn’t just a tool—it is a canvas for storytelling, design, and innovation.
+			</p>
+		  </div>
+
+		  <div class="slide" id="slide-2">
+			<h1>Personal Details</h1>
+			<p>
+			  <strong>Date of Birth:</strong> 22 Mar 2002<br>
+			  <strong>Nationality:</strong> Saudi<br>
+			  <strong>Marital Status:</strong> Single
+			</p>
+		  </div>
+
+		  <div class="slide" id="slide-3">
+			<h1>Languages</h1>
+			<p>
+			  <strong>Arabic:</strong> Native<br>
+			  <strong>English:</strong> Very Good
+			</p>
+		  </div>
+
+		  <div class="slider-buttons">
+			<button id="prev-btn" class="nav-button">⬅</button>
+			<button id="next-btn" class="nav-button">➡</button>
+		  </div>
+		</div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Wajan Albaqami</p>
+    <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+      <img src="github-logo.png" alt="GitHub" class="github-icon">
+    </a>
+  </footer>
+</body>
+</html>

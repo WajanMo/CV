@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | Contact</title>
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <meta name="keywords" content="Wajan, Contact, Email, GitHub, Message, Reach Out" />
+</head>
+<body>
+  <header id="main-header" class="light">
+    <div class="logo">
+      <img src="WB-logo.png" alt="Logo" />
+    </div>
+    <nav>
+      <ul>
+	    <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="education.html">Education</a></li>
+		<li><a href="languages.html">Languages</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-mode" onclick="toggleMode()">
+		<div id="toggle-btn"><div class="slider">🌞</div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-box">
+      <h1>Contact Me</h1>
+      <form action="mailto:albugamiwajan@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="position" placeholder="Job Title / Profession" />
+        <textarea name="message" placeholder="Write your message here..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+	<p>© 2025 Wajan Albaqami</p>
+	<a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+	   <img src="github-logo.png" alt="GitHub" class="github-icon">
+	</a>
+  </footer>
+
+</body>
+</html>
