@@ -1,0 +1,82 @@
+<!-- index.html | Homepage of Wajan's CV website. Includes logo, navigation links, and dark/light mode toggle. -->
+<!--
+The page includes:
+- A header with the site logo and navigation links.
+- A button to switch between dark and light mode.
+- The main section with a big logo image and a button to go to the "About Me" page.
+- A footer with copyright info and a link to GitHub.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the website responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wajan Albaqami | Home</title>
+
+  <!-- Google Fonts -->
+  <!-- Importing fonts from Google to make the text look nicer -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- Main Styles - Link to the main CSS file that styles the webpage -->
+  <link rel="stylesheet" href="wajan-cv-assets/style.css" />
+  <!-- Favicon - Small icon that shows in the browser tab -->
+  <link rel="icon" href="wajan-cv-assets/WB-Maroon-logo.png" id="favicon" />
+  <!-- Script for dark mode - Link to the JavaScript file that controls the dark/light mode toggle -->
+  <script src="wajan-cv-assets/script.js" defer></script>
+</head>
+<body>
+
+<header id="main-header" class="light">
+<!-- Header contains the logo, main menu, and page links -->
+  <div class="logo">
+    <!-- The logo image in the header -->
+    <img src="wajan-cv-assets/WB-logo.png" alt="Logo" id="header-logo" />
+  </div>
+  <nav>
+    <!-- Main navigation menu -->
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li><!-- Active page -->
+      <li><a href="wajan-cv-assets/about.html">About Me</a></li>
+      <li><a href="wajan-cv-assets/education.html">Education</a></li>
+      <li><a href="wajan-cv-assets/languages.html">Languages</a></li>
+      <li><a href="wajan-cv-assets/skills.html">Skills</a></li>
+      <li><a href="wajan-cv-assets/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dark/Light mode toggle - Button to switch between light and dark modes-->
+  <div class="toggle-mode" id="toggle-btn">
+    <div class="slider">🌞</div>
+  </div>
+</header>
+
+<main class="hero">
+  <!-- Main section of the page with important content -->
+  <div class="home-content">
+    <!-- Large logo image on the homepage -->
+    <img src="wajan-cv-assets/WajanAlbaqami--logo.png" alt="Wajan Logo" class="main-logo" id="main-hero-logo" />
+	<!-- Button that invites the user to know more, links to About Me page -->
+    <a href="wajan-cv-assets/about.html" class="cta-button" id="home-cta-button">Know Me More</a>
+  </div>
+</main>
+
+<footer id="main-footer">
+  <!-- Footer with copyright and GitHub link -->
+  <div class="footer-content">
+    <p>
+      © 2025 Wajan Albaqami
+      <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+	    <!-- GitHub icon with a link that opens in a new tab -->
+        <img src="wajan-cv-assets/github-logo.png" alt="GitHub" class="github-icon" id="footer-github-icon" />
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>

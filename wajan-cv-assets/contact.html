@@ -1,0 +1,91 @@
+<!--
+This is the HTML file for the "Contact" page on Wajan's CV website.
+It contains:
+- A header with navigation and dark/light mode toggle.
+- A main section with an image and a contact form.
+- A footer with GitHub link and copyright.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the page responsive on all screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | Contact</title>
+
+  <!-- Browser tab icon -->
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon" />
+
+  <!-- Google Fonts for page styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- JavaScript file loaded after page -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Header with logo, navigation links, and dark/light toggle -->
+<header id="main-header" class="light">
+  <div class="logo">
+    <!-- Site logo image -->
+    <img src="WB-logo.png" alt="Logo" id="header-logo">
+  </div>
+  <nav>
+    <!-- Main navigation menu -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="languages.html">Languages</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li><!-- Active page -->
+    </ul>
+  </nav>
+  <!-- Toggle switch for light/dark mode -->
+  <div class="toggle-mode" id="toggle-btn">
+    <div class="slider">🌞</div>
+  </div>
+</header>
+
+<!-- Main section containing contact image and form -->
+<main class="contact-main">
+  <!-- Decorative image on the side -->
+  <div class="image-overlay">
+    <img src="contact-pic.png" alt="Decorative Contact Graphic">
+  </div>
+
+  <!-- Contact form area -->
+  <div class="form-area">
+    <!-- Title and intro message -->
+    <h1 class="contact-title">CONTACT ME</h1>
+    <p class="contact-description">
+      <p class="we-message">Your message matters.</p>
+    </p>
+
+    <!-- Contact form using mailto (opens user's email app when submitted) -->
+    <form action="mailto:albugamiwajan@gmail.com" method="POST" enctype="text/plain" class="modern-contact-form">
+	  <input type="text" name="name" placeholder="  👤  Your Name" required /> <!-- Name input -->
+	  <input type="text" name="contact" placeholder="  📱/📧  Phone or Email" required /> <!-- Contact info input (phone or email) -->
+	  <input type="text" name="subject" placeholder="  📝  Your Subject" required /> <!-- Subject input -->
+	  <textarea name="message" placeholder="  💬  Your Message" rows="4" required></textarea> <!-- Message textarea -->
+	  <button type="submit" class="submit-btn">Submit Message</button> <!-- Submit button -->
+	</form>
+
+  </div>
+</main>
+
+<!-- Footer section -->
+<footer>
+  <p>© 2025 Wajan Albaqami</p>
+  <!-- GitHub icon with profile link -->
+  <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+    <img src="github-logo.png" alt="GitHub" class="github-icon" />
+  </a>
+</footer>
+
+</body>
+</html>

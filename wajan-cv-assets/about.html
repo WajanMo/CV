@@ -1,0 +1,128 @@
+<!--
+This is the HTML file for the "About Me" page of Wajan's CV website.
+It includes:
+- A header with a logo, navigation menu, and a dark/light mode toggle.
+- A main section with a split layout: image on the left, text content on the right.
+- A content slider that shows different slides: Introduction, Personal Details, and Languages.
+- A footer with copyright and GitHub link.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the website responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | About Me</title>
+
+  <!-- Favicon - Small icon shown in the browser tab-->
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon">
+
+  <!-- Google Fonts: for headings and body text - Importing custom fonts from Google to style the text -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet" />
+
+
+  <!-- Main CSS file - Styles the layout and design of the page -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- JavaScript file with defer to load after HTML - Controls features like dark/light mode and slider -->
+  <script src="script.js" defer></script>
+  
+  <!-- Keywords for SEO -->
+  <meta name="keywords" content="Wajan, Wajan Albaqami, About Me, Bio, Qassim University, Computer Science" />
+</head>
+<body>
+
+<!-- Header section with logo, navigation links, and mode toggle -->
+<header id="main-header" class="light">
+  <div class="logo">
+    <!-- Site logo in the header -->
+    <img src="WB-logo.png" alt="Logo" id="header-logo">
+  </div>
+  <nav>
+    <!-- Navigation bar to go between pages -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Me</a></li><!-- Active page -->
+      <li><a href="education.html">Education</a></li>
+      <li><a href="languages.html">Languages</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+    <!-- Dark/Light mode toggle button -->
+    <!-- JavaScript uses the ID to find this toggle and switch themes -->
+	<div class="toggle-mode" id="toggle-btn">
+	  <div class="slider">🌞</div>
+	</div>
+
+</header>
+
+<!-- Main section with image on the left and content on the right -->
+<main class="about-main">
+  <div class="about-left">
+    <!-- A maroon-colored overlay on the background image -->
+    <div class="overlay"></div>
+	<!-- Background image for the about section -->
+    <img src="Maroon.jpeg" alt="Wajan Background" />
+  </div>
+  <div class="about-right">
+    <!-- Container for slide-based content -->
+    <div class="content-box">
+      <div class="content-box" id="about-slider">
+        <!-- Slide 1: Intro about Wajan -->
+        <div class="slide active" id="slide-1">
+          <h1>About Me</h1>
+          <p>
+            I'm <strong>Wajan Albaqami</strong>, a Computer Science student at <strong>Qassim University</strong>, passionate about coding, web design, and cybersecurity — diverse fields that come together to build secure and impactful digital experiences.
+            <br><br>
+            I enjoy tackling creative challenges that blend logic, design, and security. Whether it's writing clean code, crafting intuitive user interfaces, or strengthening digital infrastructure, I strive to develop smart and secure technology.
+            <br><br>
+            I'm also interested in <strong>Game Programming</strong>, where creativity meets code to bring interactive ideas to life.
+          </p>
+          <p>
+            For me, technology isn’t just a tool—it is a canvas for storytelling, design, and innovation.
+          </p>
+        </div>
+
+        <!-- Slide 2: Personal info -->
+        <div class="slide" id="slide-2">
+          <h1>Personal Details</h1>
+          <p>
+            <strong>Date of Birth:</strong> 22 Mar 2002<br>
+            <strong>Nationality:</strong> Saudi<br>
+            <strong>Marital Status:</strong> Single
+          </p>
+        </div>
+
+        <!-- Slide 3: Language skills -->
+        <div class="slide" id="slide-3">
+          <h1>Languages</h1>
+          <p>
+            <strong>Arabic:</strong> Native<br>
+            <strong>English:</strong> Very Good
+          </p>
+        </div>
+
+        <!-- Buttons to move between slides -->
+        <div class="slider-buttons">
+		  <button class="nav-button" id="prev-slide" aria-label="Previous slide">‹</button>
+		  <button class="nav-button" id="next-slide" aria-label="Next slide">›</button>
+		</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer with copyright and GitHub -->
+<footer>
+  <p>© 2025 Wajan Albaqami</p>
+  <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+    <!-- GitHub icon with link to profile -->
+    <img src="github-logo.png" alt="GitHub" class="github-icon">
+  </a>
+</footer>
+
+</body>
+</html>

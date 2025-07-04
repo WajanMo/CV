@@ -1,0 +1,1230 @@
+/* ====== General styles ====== */
+/* Apply box-sizing to all elements and pseudo-elements to keep sizing predictable */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Full height setup for HTML and body to allow full-page layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Open Sans', sans-serif;  /* Set default font */
+  margin: 0;
+  padding: 0;
+  background-color: white;               /* Default background for light mode */
+  color: #390007;                        /* Default text color */
+  animation: fadeIn 1s ease-in;          /* Page fade-in animation on load */
+  transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth mode transition */
+  overflow-x: hidden;                    /* Prevent horizontal scrolling */
+  min-height: 100vh;                     /* Ensure body fills screen height */
+  display: flex;                         /* Enable flexbox for vertical layout */
+  flex-direction: column;               /* Stack header > content > footer */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Slide up effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Anchor (Link) styles ====== */
+a {
+  color: #390007;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Header ====== */
+header {
+  display: flex;
+  align-items: center;        /* Vertically center items */
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(57, 0, 7, 0.1);  /* Light shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 10;                /* Stay above content */
+}
+
+/* Header styling when in dark mode */
+header.dark {
+  background-color: #390007;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Logo in header */
+.logo img {
+  width: 50px;
+  height: auto;
+  transition: filter 0.3s ease; /* Smooth transition when switching themes */
+}
+
+/* ====== Navigation ====== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active or hovered link style */
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #390007;
+  color: white;
+}
+
+/* Links inside dark header or body */
+header.dark nav ul li a,
+body.dark nav ul li a {
+  color: white;
+}
+
+/* Hover/active link style inside dark header */
+header.dark nav ul li a.active,
+header.dark nav ul li a:hover {
+  background-color: white;
+  color: #390007;
+}
+
+/* ====== Dark Mode Toggle Button ====== */
+.toggle-mode {
+  background-color: #390007;
+  border-radius: 15px;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Toggle switch style for dark mode */
+header.dark .toggle-mode {
+  background-color: white;
+}
+
+/* Toggle slider inside the switch */
+.toggle-mode .slider {
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aa264b;
+  font-size: 14px;
+  transition: left 0.2s ease, color 0.2s ease;
+}
+
+/* Position and color of the toggle in dark mode */
+header.dark .toggle-mode .slider {
+  left: 27.5px;
+  color: #390007;
+  background-color: #390007;
+}
+
+/* ====== Main Content Hero Section (Homepage) ====== */
+main.hero {
+  display: flex;
+  align-items: center;                      /* Center content vertically */
+  justify-content: center;                 /* Center content horizontally */
+  height: calc(100vh - 120px);             /* Full height minus header/footer */
+  background-color: white;
+  text-align: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 0;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;                        /* Prevent overflow */
+  flex-grow: 1;                            /* Take remaining vertical space */
+}
+
+/* Hero background in dark mode */
+body.dark main.hero {
+  background-color: #2a0005;
+}
+
+/* Container for hero text/logo/button */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateY(-40px);           /* Slight upward shift */
+}
+
+/* ====== Main Logo in Hero Section ====== */
+#main-hero-logo {
+  max-width: 490px;
+  width: 100%;
+  margin-bottom: 2rem;
+  filter: saturate(0%) sepia(100%) hue-rotate(-15deg) brightness(0.2) saturate(500%) drop-shadow(0 0 0 #390007);
+  transition: filter 0.3s ease;
+}
+
+/* Logo filter in light mode */
+body:not(.dark) #main-hero-logo {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(86%) saturate(950%) hue-rotate(330deg) brightness(80%) contrast(110%);
+}
+
+/* Logo filter in dark mode */
+body.dark #main-hero-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ====== CTA Button on Home Page ====== */
+#home-cta-button {
+  background-color: #390007;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 900;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Hover effect for CTA */
+#home-cta-button:hover {
+  background-color: white;
+  color: #390007;
+}
+
+/* Dark mode CTA default */
+body.dark #home-cta-button {
+  background-color: white;
+  color: #390007;
+}
+
+/* Dark mode CTA hover */
+body.dark #home-cta-button:hover {
+  background-color: #390007;
+  color: white;
+}
+
+/* ====== Footer ====== */
+footer {
+  font-family: 'Merriweather', serif;
+  background-color: white;
+  color: #390007;
+  box-shadow: 0 -2px 6px rgba(57, 0, 7, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem 2rem;
+  height: 60px;                  /* Fixed height for layout stability */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  flex-shrink: 0;                /* Prevent footer from shrinking */
+}
+
+/* Dark mode footer */
+footer.dark {
+  background-color: #390007;
+  color: white;
+  box-shadow: inset 0 1px 4px rgba(255,255,255,0.1);
+}
+
+/* Footer content layout */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: row;
+  text-align: center;
+}
+
+/* Footer text style */
+.footer-content p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ====== GitHub Icon ====== */
+.github-icon {
+  width: 40px;
+  height: 40px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover animation for icon */
+.github-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Light mode GitHub icon */
+body:not(.dark) .github-icon {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(86%) saturate(950%) hue-rotate(330deg) brightness(80%) contrast(110%);
+}
+
+/* Dark mode GitHub icon */
+body.dark .github-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ====== Header Logo Filter ====== */
+#header-logo {
+  transition: filter 0.3s ease;
+}
+
+/* Light mode logo */
+body:not(.dark) #header-logo {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(86%) saturate(950%) hue-rotate(330deg) brightness(80%) contrast(110%);
+}
+
+/* Dark mode logo */
+body.dark #header-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ====== Responsive Layout (Tablet & Mobile) ====== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row;         
+    overflow-x: auto;            
+    white-space: nowrap;        
+    gap: 1rem;                  
+    padding: 0.5rem 1rem;
+    justify-content: flex-start; 
+    scrollbar-width: none;     
+  }
+  
+  header nav {
+    overflow-x: auto;          
+    max-width: 100vw;          
+  }
+
+  nav ul {
+    flex-wrap: nowrap;         
+  }
+
+
+  nav ul::-webkit-scrollbar {
+    display: none;          
+  }
+  
+  nav ul li {
+    flex: 0 0 auto;         
+  }
+  
+  .toggle-mode {
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    position: relative;
+    background-color: #390007;
+    flex-shrink: 0;
+  }
+
+  .toggle-mode .slider {
+    width: 21px;
+    height: 21px;
+    top: 2px;
+    left: 2px;
+    font-size: 14px;
+    transition: left 0.3s ease, background-color 0.3s ease;
+  }
+
+  header.dark .toggle-mode .slider {
+    left: 27px; 
+    background-color: #390007;
+    color: white;
+  }
+
+  
+  .toggle-mode .slider i,
+  .toggle-mode .slider svg {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+ /* ===== Footer  ===== */
+ 
+  .footer-content {
+    flex-direction: row;        
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-content p {
+    margin: 0;
+  }
+  
+  footer .footer-content a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+/* ====== About Page Layout ====== */
+.about-main {
+  display: flex; /* Use flexbox to arrange children side by side */
+  gap: 2rem; /* Space between flex items */
+  padding: 2rem; /* Inner spacing around content */
+  min-height: calc(100vh - 160px); /* Minimum height fills viewport minus header/footer */
+  color: #390007; /* Dark maroon text color */
+  background-color: white; /* Default background color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color change transitions */
+  flex-grow: 1; /* Allows container to expand if needed */
+}
+
+/* Dark mode for About page */
+body.dark .about-main {
+  background-color: #2a0005; /* Dark maroon background for dark mode */
+  color: white; /* White text in dark mode */
+}
+
+.about-left {
+  flex: 1; /* Takes up proportional space */
+  position: relative; /* For absolutely positioned overlay inside */
+  border-radius: 12px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow (for rounded corners on image) */
+  max-width: 40%; /* Limit width to 40% of container */
+}
+
+.about-left .overlay {
+  position: absolute; /* Positioned over image */
+  inset: 0; /* Cover entire parent */
+  background-color: rgba(57, 0, 7, 0.4); /* Semi-transparent maroon overlay */
+  z-index: 1; /* Above the image */
+}
+
+.about-left img {
+  width: 100%; /* Full width of container */
+  height: 100%; /* Full height of container */
+  object-fit: cover; /* Cover entire area without distortion */
+  display: block; /* Remove inline space below image */
+  border-radius: 12px; /* Rounded corners to match container */
+  position: relative; /* For z-index control */
+  z-index: 0; /* Behind overlay */
+}
+
+.about-right {
+  flex: 1.2; /* Slightly larger than left side */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  position: relative; /* For potential absolute children */
+}
+
+.content-box {
+  position: relative; /* For layering */
+  background-color: rgba(255 255 255 / 0.95); /* Mostly opaque white background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1.5rem 2rem; /* Inner spacing */
+  box-shadow: 0 0 15px rgba(57,0,7,0.2); /* Soft shadow to elevate */
+  min-height: 300px; /* Ensure enough height */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color/background changes */
+}
+
+/* Dark mode adjustments for content box and slides */
+body.dark .content-box {
+  background-color: rgba(255 255 255 / 0.1); /* Much more transparent background */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15); /* Lighter shadow for dark mode */
+  color: white; /* White text */
+}
+
+/* Slider Content */
+.slide {
+  display: none; /* Hide slides by default */
+  animation: fadeIn 0.5s ease; /* Fade in effect when shown */
+  max-width: 600px; /* Reasonable max width for readability */
+  margin: 0 auto 1rem auto; /* Center horizontally and add margin below */
+  overflow-wrap: break-word; /* Wrap long words to avoid overflow */
+  color: #390007; /* Dark maroon text */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Smaller slides for language and personal details */
+.slide.language-slide,
+.slide.personal-details-slide {
+  max-width: 400px; /* Smaller max width */
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Slide active */
+.slide.active {
+  display: block; /* Show active slide */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+/* Dark mode slide text color */
+body.dark .slide {
+  color: white; /* White text in dark mode */
+}
+
+/* Navigation buttons container */
+.slider-buttons {
+  margin-top: 1.5rem; /* Space above buttons */
+  display: flex; /* Arrange buttons horizontally */
+  justify-content: space-between; /* Space buttons left and right */
+  max-width: 600px; /* Match slide width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  gap: 10px; /* Space between buttons */
+}
+
+#prev-slide {
+  margin-right: auto; 
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-main {
+    flex-direction: column; /* Stack left and right vertically */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .about-left {
+    max-width: 100%; /* Full width */
+    height: 250px; /* Fixed height for image */
+  }
+
+  .about-left img {
+    border-radius: 12px; /* Keep rounded corners */
+  }
+
+  /* Keep buttons spaced same on smaller screens */
+  .slider-buttons {
+    justify-content: space-between;
+  }
+}
+
+.slider-buttons {
+  display: flex; /* Flex container */
+  max-width: 600px; /* Limit max width */
+  margin: 1.5rem auto 0; /* Center horizontally with margin on top */
+  justify-content: flex-end; /* Keep buttons right-aligned */
+  gap: 10px; /* Space between buttons */
+  /* Avoid reversing direction */
+}
+
+.nav-button {
+  width: 36px; /* Fixed size */
+  height: 36px;
+  border-radius: 50%; /* Circular buttons */
+  font-size: 20px; /* Large font for icons/text */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Center content */
+  align-items: center;
+  justify-content: center;
+  border: none; /* Remove border */
+  background-color: #7B0023; /* Dark maroon background */
+  color: white; /* White text */
+  box-shadow: 0 2px 6px rgba(57, 0, 7, 0.2); /* Soft shadow */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+#next-slide {
+  margin-left: auto; /* Push next button to the right */
+}
+
+.nav-button:hover {
+  filter: brightness(0.9); /* Slightly darker on hover */
+}
+
+body.dark .nav-button {
+  background-color: white; /* Inverted colors for dark mode */
+  color: #390007; /* Dark maroon text */
+}
+
+/* Disabled button style */
+.nav-button:disabled {
+  opacity: 0.4; /* Faded look */
+  cursor: default; /* Default cursor, no pointer */
+}
+
+/* ====== Education Page Main Container ====== */
+.education-layout {
+  display: flex; /* Use flexbox to arrange children horizontally */
+  gap: 2rem; /* Space between flex items */
+  padding: 2rem; /* Inner padding */
+  min-height: calc(100vh - 160px); /* Fill viewport height minus header/footer */
+  color: #390007; /* Dark maroon text color */
+  background-color: white; /* Default background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for colors */
+  align-items: center; /* Vertically center the flex items */
+  justify-content: flex-start; /* Align items to the left */
+  flex-grow: 1; /* Allow container to grow */
+  font-family: 'Raleway', cursive; /* Unique cursive font for content */
+}
+
+/* Dark mode for education layout */
+body.dark .education-layout {
+  background-color: #2a0005; /* Dark maroon background */
+  color: white; /* White text in dark mode */
+  font-family: 'DM Serif Display', serif; /* Different font for dark mode */
+}
+
+/* Education page title */
+.page-title.left {
+  flex: 0 0 30%; /* Fixed width: 30% of container */
+  font-size: 3rem; /* Large font size for title */
+  font-weight: bold; /* Bold text */
+  color: #390007; /* Dark maroon */
+  font-family: 'Playfair Display', serif; /* Serif font for elegance */
+  text-align: left; /* Align text left */
+  margin: 0; /* Remove default margin */
+  padding-left: 90px; /* Left padding for spacing */
+  align-self: center; /* Vertically center title within container */
+}
+
+/* Dark mode for page title */
+body.dark .page-title.left {
+  color: white; /* White text in dark mode */
+}
+
+/* Education content box */
+.education-box {
+  flex: 0 0 65%; /* Fixed width: 65% of container */
+  background-color: rgba(255, 255, 255, 0.08); /* Transparent white background */
+  padding: 30px; /* Inner padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for elevation */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  color: #390007; /* Dark maroon text */
+  max-height: 450px; /* Limit max height */
+  box-sizing: border-box; /* Include padding in height/width */
+  display: flex; /* Use flexbox for content inside */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+/* Dark mode for education box */
+body.dark .education-box {
+  background-color: rgba(255, 255, 255, 0.06); /* More transparent background */
+  color: white; /* White text */
+}
+
+/* Education image inside box */
+.education-box img.education-image {
+  max-width: 100%; /* Responsive width */
+  max-height: 150px; /* Limit height for rectangular shape */
+  object-fit: contain; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space below image */
+}
+
+/* Paragraph text inside education box */
+.education-box p {
+  font-family: 'DM Serif Display', serif; /* Serif font for paragraphs */
+  font-size: 1.1rem; /* Slightly larger font */
+  line-height: 1.7; /* Better readability */
+  margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* Dark mode for paragraphs */
+body.dark .education-box p {
+  font-family: 'DM Serif Display', serif; /* Consistent font in dark mode */
+}
+
+/* Text under the image inside education box */
+.education-box > div {
+  font-family: 'DM Serif Display', serif; /* Serif font */
+  font-size: 1rem; /* Normal size text */
+  text-align: center; /* Center text */
+}
+
+/* Dark mode for text under image */
+body.dark .education-box > div {
+  font-family: 'DM Serif Display', serif; /* Consistent font in dark mode */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .education-layout {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1rem 2rem; /* Adjust padding */
+    min-height: auto; /* Let height adjust naturally */
+  }
+
+  .page-title.left {
+    width: 100%; /* Full width on small screens */
+    text-align: center; /* Center title text */
+    padding-left: 0; /* Remove left padding */
+    margin-bottom: 1rem; /* Space below title */
+    flex: none; /* Remove flex grow/shrink */
+  }
+
+  .education-box {
+    width: 100%; /* Full width */
+    flex: none; /* Remove flex grow/shrink */
+    max-height: none; /* Remove max height limit */
+  }
+}
+
+/* ====== Languages Page Styles ====== */
+.lang-wrapper {
+  display: flex; /* Use flexbox layout */
+  justify-content: flex-start; /* Align content from the top */
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 2rem; /* Space between items */
+  padding: 2rem 3rem; /* Inner padding: 2rem top/bottom, 3rem left/right */
+  min-height: calc(93vh - 85px); /* Minimum height to fit header and footer */
+  background-color: white; /* Default background */
+  color: #390007; /* Dark maroon text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transitions */
+  flex-grow: 1; /* Allow container to grow */
+}
+
+/* Dark mode for languages page wrapper */
+body.dark .lang-wrapper {
+  background-color: #2a0005; /* Dark maroon background */
+  color: white; /* White text */
+}
+
+/* Page heading (title above content box) */
+.page-heading {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 3rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 1.5rem; /* Space below heading */
+  color: inherit; /* Inherit color from parent (works for dark mode) */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
+}
+
+/* Content box container */
+.content-box {
+  background-color: rgba(255, 255, 255, 0.08); /* Slightly transparent white */
+  border-radius: 12px; /* Rounded corners */
+  padding: 30px; /* Inner padding */
+  max-width: 700px; /* Max width to limit size */
+  width: 100%; /* Full width within max width */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: inherit; /* Inherit text color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Dark mode for content box */
+body.dark .content-box {
+  background-color: rgba(255, 255, 255, 0.06); /* More transparent background */
+  color: white; /* White text */
+}
+
+/* Labels for language skills and progress bars */
+.lang-skill label {
+  font-weight: 700; /* Bold label */
+  font-size: 1.1rem; /* Slightly larger text */
+  margin-top: 15px; /* Space above label */
+  display: block; /* Make label a block element */
+  color: inherit; /* Inherit color for dark mode */
+}
+
+/* Progress bar container */
+.progress {
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  border-radius: 10px; /* Rounded edges */
+  overflow: hidden; /* Hide overflow for smooth bar edges */
+  height: 20px; /* Bar height */
+  width: 100%; /* Full width */
+  margin-top: 6px; /* Space above bar */
+}
+
+/* Progress bar fill */
+.progress div {
+  height: 100%; /* Fill full height */
+  border-radius: 10px; /* Rounded edges to match container */
+  transition: width 0.6s ease-in-out; /* Smooth width animation */
+}
+
+/* Colors for progress bars */
+/* Green for high proficiency */
+.green {
+  background-color: #4caf50;
+}
+
+/* Yellow for medium proficiency */
+.yellow {
+  background-color: #ffc107;
+}
+
+/* Red for low proficiency */
+.red {
+  background-color: #f44336;
+}
+
+/* Dark mode colors for progress bars */
+body.dark .green {
+  background-color: #66bb6a; /* Slightly lighter green */
+}
+
+body.dark .yellow {
+  background-color: #ffd54f; /* Slightly lighter yellow */
+}
+
+body.dark .red {
+  background-color: #ef5350; /* Slightly lighter red */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .lang-wrapper {
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .page-heading {
+    font-size: 2.4rem; /* Smaller heading font */
+  }
+
+  .content-box {
+    max-width: 100%; /* Full width on small screens */
+    padding: 20px; /* Reduce padding */
+  }
+}
+
+/* ====== Skills Section ====== */
+/* Main container for the Skills section */
+.skills-section {
+  background-color: white;
+  color: #390007;
+  padding: 2rem 3rem;
+  min-height: calc(93vh - 85px); /* Fits header + footer */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 100%;
+}
+
+/* Dark mode styles for Skills section */
+body.dark .skills-section {
+  background-color: #2a0005;
+  color: white;
+}
+
+/* Section title styling */
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* Fade-in-down animation for the title */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container for tab buttons */
+.tab-buttons {
+  display: flex;
+  justify-content: center;  /* Center buttons horizontally */
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;          /* Allow buttons to wrap on smaller screens */
+}
+
+/* Individual tab button styles */
+.tab-btn {
+  background: transparent;
+  border: 2px solid currentColor;
+  color: inherit;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect on tab buttons (except active) */
+.tab-btn:hover:not(.active) {
+  background-color: rgba(57, 0, 7, 0.1);
+}
+
+/* Dark mode hover effect on tab buttons */
+body.dark .tab-btn:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active tab button styles in light mode */
+body:not(.dark) .tab-btn.active {
+  background-color: #390007;  /* Dark background */
+  color: white;               /* White text */
+  box-shadow: 0 0 10px rgba(170, 38, 75, 0.6);
+}
+
+/* Active tab button styles in dark mode */
+body.dark .tab-btn.active {
+  background-color: white;   /* White background */
+  color: #390007;            /* Dark text */
+  box-shadow: 0 0 10px rgba(170, 38, 75, 0.6);
+}
+
+/* Container for skill tabs - hidden by default */
+.skill-tab {
+  display: none;
+}
+
+/* Show active skill tab as grid */
+.skill-tab.active {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+/* Fade-in-up animation for skill tabs */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Single skill box styling */
+.single-skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* Left align text */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(57, 0, 7, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(57, 0, 7, 0.1);
+  margin: 0 auto;           /* Center skill box */
+  width: fit-content;       /* Width based on content */
+  max-width: 100%;          /* Don't exceed container width */
+  box-sizing: border-box;
+}
+
+/* Hover effect on single skill box */
+.single-skill-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(57, 0, 7, 0.2);
+}
+
+/* Dark mode styles for single skill box */
+body.dark .single-skill-box {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Skill list styling inside each box */
+.single-skill-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;         /* Left align list text */
+}
+
+/* Individual skill item */
+.single-skill-box ul li {
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 1rem;
+  padding-left: 1.6rem;
+  position: relative;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Checkmark before each skill item */
+.single-skill-box ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #aa264b;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Dark mode styles for skill-box hover */
+body.dark .skill-box {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  /* Reduce title font size on small screens */
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  /* Stack tab buttons vertically and center them */
+  .tab-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  /* Make tab buttons full width on small screens */
+  .tab-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  /* Reduce padding inside skill boxes on small screens */
+  .single-skill-box {
+    padding: 1.5rem;
+  }
+
+  /* Skills grid changes to single column */
+  .skill-tab.active {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Additional padding for skills wrapper if any */
+  .skills-wrapper {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  /* Font size and padding tweaks for skill-box */
+  .skill-box {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+}
+
+/* ====== Contact Page Layout ====== */
+.contact-main {
+  display: flex;                              /* Arrange form and image side by side */
+  justify-content: center;                   /* Center content horizontally */
+  align-items: center;                       /* Center content vertically */
+  position: relative;                        /* Allow absolute positioning for decorative image */
+  min-height: calc(100vh - 160px);           /* Full height minus header and footer */
+  background-color: white;                   /* Light mode background */
+  color: #390007;                            /* Main maroon text color */
+  padding: 4rem 2rem;                        /* Padding around content */
+  overflow: hidden;                          /* Hide overflow from image */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth dark/light transition */
+  flex-grow: 1;                              /* Take remaining vertical space */
+}
+
+/* Dark mode background and text */
+body.dark .contact-main {
+  background-color: #2a0005;                 /* Deep maroon background in dark mode */
+  color: white;                              /* Light text in dark mode */
+}
+
+/* Intro text above the form */
+.we-message {
+  font-family: 'Special Elite', cursive;     /* Typewriter-style font */
+  font-size: 1.6rem;                          /* Slightly larger than base */
+  text-align: center;                        /* Center the message */
+  color: #390007;                            /* Maroon color in light mode */
+  letter-spacing: 0.3px;                     /* Slight spacing between letters */
+}
+
+/* Change color in dark mode */
+body.dark .we-message {
+  color: white;
+}
+
+/* ====== Decorative Image (left side image) ====== */
+.image-overlay {
+  position: absolute;                        /* Positioned relative to .contact-main */
+  top: 20px;                                 /* Offset from top */
+  left: 0;                                   /* Aligned to the left */
+  width: 800px;                              /* Max width for large screens */
+  max-width: 70%;                            /* Responsive scaling */
+  z-index: 1;                                /* Behind form */
+}
+
+/* Image sizing */
+.image-overlay img {
+  width: 100%;
+  height: auto;
+}
+
+/* ====== Contact Form Area ====== */
+.form-area {
+  max-width: 500px;                          /* Limit width to keep form compact */
+  width: 100%;
+  z-index: 2;                                /* Place above background image */
+  margin-left: auto;                         /* Push form to right */
+  text-align: left;
+  padding-right: 7.5rem;                     /* Space from right edge */
+}
+
+/* Form title */
+.contact-title {
+  font-family: 'Playfair Display', serif;    /* Elegant serif font */
+  font-size: 2.5rem;                         /* Large title */
+  color: inherit;                            /* Inherits color from parent */
+  margin-bottom: 0.5rem;
+}
+
+/* Description under title */
+.contact-description {
+  font-size: 0.95rem;                        /* Smaller than body text */
+  color: inherit;
+  margin-bottom: 2rem;
+}
+
+/* Modern form container */
+.modern-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;                                 /* Space between inputs */
+}
+
+/* Form fields */
+.modern-contact-form input,
+.modern-contact-form textarea {
+  width: 100%;                               /* Full width */
+  padding: 1rem 1.2rem;                      /* Comfortable padding */
+  font-size: 1rem;
+  border: none;                              /* No default border */
+  border-radius: 12px;                       /* Rounded edges */
+  background-color: #fff;                    /* White input background (light mode) */
+  color: #390007;                            /* Maroon text */
+  box-shadow: 0 4px 10px rgba(57, 0, 7, 0.15); /* Soft brown shadow */
+  font-family: 'Special Elite', cursive;     /* Consistent font */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder text style */
+.modern-contact-form input::placeholder,
+.modern-contact-form textarea::placeholder {
+  color: #999;                               /* Light gray placeholder */
+}
+
+/* Dark mode fields */
+body.dark .modern-contact-form input,
+body.dark .modern-contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent white bg */
+  color: white;
+}
+
+/* ====== Submit Button ====== */
+.submit-btn {
+  background-color: #390007;                /* Maroon background */
+  color: white;                             /* White text */
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 30px;                      /* Pill shape */
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  align-self: flex-start;                   /* Align left inside flex */
+  box-shadow: 0 4px 12px rgba(57, 0, 7, 0.3); /* Shadow effect */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect (light mode) */
+.submit-btn:hover {
+  background-color: white;
+  color: #390007;
+}
+
+/* Button dark mode */
+body.dark .submit-btn {
+  background-color: white;
+  color: #390007;
+}
+
+/* Button hover dark mode */
+body.dark .submit-btn:hover {
+  background-color: #390007;
+  color: white;
+}
+
+/* ====== Responsive Styles (Mobile) ====== */
+@media (max-width: 768px) {
+  .contact-main {
+	display: flex;
+    flex-direction: column-reverse;
+    align-items: center;	
+	justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .image-overlay {
+    position: static;                       /* Reset positioning */
+    width: 100%;                            /* Full width on small screens */
+    max-width: 100%;
+    margin-top: 2rem;                    
+  }
+
+  .form-area {
+    margin: 0 auto;                         /* Center form horizontally */
+    text-align: center;                     /* Center text inside form */
+    padding-right: 0;                       /* Remove side padding */
+	width: 100%;
+    max-width: 500px;
+  }
+
+  .start-chat-btn {
+    align-self: center;
+  }
+  
+   html, body {
+    height: auto;             
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;         
+  }
+}
+

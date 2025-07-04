@@ -1,0 +1,112 @@
+<!--
+This is the HTML file for the "Programming Languages" page on Wajan's CV website.
+It includes:
+- A header with logo, navigation links, and a dark/light mode toggle.
+- A main section that lists different programming languages and shows progress bars to represent skill levels.
+- A footer with copyright and a GitHub link.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the page responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | Programming Languages</title>
+
+  <!-- Favicon: small icon in the browser tab -->
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon">
+
+  <!-- Google Fonts: used to improve text appearance -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Link to JavaScript file, loaded after HTML is ready -->
+  <script src="script.js" defer></script>
+  
+  <!-- Meta keywords for better search engine visibility -->
+  <meta name="keywords" content="Wajan, Programming Languages, Python, JavaScript, HTML, CSS, SQL, C++, Java" />
+</head>
+<body>
+
+<!-- Header with logo, navigation links, and toggle for light/dark mode -->
+<header id="main-header" class="light">
+  <div class="logo">
+    <!-- Logo image in the top-left corner -->
+    <img src="WB-logo.png" alt="Logo" id="header-logo">
+  </div>
+  <nav>
+    <!-- Main menu to navigate through the site -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="languages.html" class="active">Languages</a></li><!-- Active page -->
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Button to switch between light and dark modes -->
+  <div class="toggle-mode" onclick="toggleMode()">
+    <div id="toggle-btn"><div class="slider"><span id="icon">🌞</span></div></div>
+  </div>
+</header>
+
+<!-- Main section showing programming language skills -->
+<main>
+  <div class="lang-wrapper">
+    <!-- Page title -->
+    <h1 class="page-heading">Programming Languages</h1>
+    <section class="content-box">
+	  <!-- List of programming languages with progress bars -->
+      <div class="lang-skill">
+	  
+	    <!-- Each label shows the language name, and the progress bar shows the skill level -->
+		
+        <label>Python</label>
+        <div class="progress">
+          <div class="green" style="width: 95%;"></div>
+        </div>
+
+        <label>JavaScript</label>
+        <div class="progress">
+          <div class="yellow" style="width: 70%;"></div>
+        </div>
+
+        <label>HTML / CSS</label>
+        <div class="progress">
+          <div class="yellow" style="width: 80%;"></div>
+        </div>
+
+        <label>C++</label>
+        <div class="progress">
+          <div class="green" style="width: 97%;"></div>
+        </div>
+
+        <label>Java</label>
+        <div class="progress">
+          <div class="green" style="width: 100%;"></div>
+        </div>
+
+        <label>SQL</label>
+        <div class="progress">
+          <div class="red" style="width: 60%;"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Footer section with copyright -->
+<footer>
+  <p>© 2025 Wajan Albaqami</p>
+  <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+    <!-- GitHub link with icon -->
+    <img src="github-logo.png" alt="GitHub" class="github-icon">
+  </a>
+</footer>
+
+</body>
+</html>

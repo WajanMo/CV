@@ -1,0 +1,113 @@
+<!--
+This is the HTML file for the "Skills" page on Wajan's CV website.
+It contains:
+- A header with logo, navigation links, and a light/dark mode toggle.
+- A main section that separates skills into "Core Skills" and "Soft Skills" using tabs.
+- A footer with GitHub link and copyright.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the layout responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | Skills</title>
+  <!-- Favicon: small icon in the browser tab -->
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon" />
+  <!-- Google Fonts: used to improve text appearance -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+
+  <!-- External CSS file for styling -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Link to JavaScript file, loaded after HTML is ready -->
+  <script src="script.js" defer></script>
+  <!-- Keywords for search engines -->
+  <meta name="keywords" content="Wajan, Skills, Programming, Developer, Frontend, Backend" />
+</head>
+<body>
+
+<!-- Header with navigation and mode toggle -->
+<header id="main-header" class="light">
+  <div class="logo">
+    <!-- Website logo -->
+    <img src="WB-logo.png" alt="Logo" id="header-logo" />
+  </div>
+  <nav>
+    <!-- Navigation menu -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="languages.html">Languages</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li><!-- Active page -->
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Toggle switch to change between light and dark mode -->
+  <div class="toggle-mode" onclick="toggleMode()">
+    <div id="toggle-btn"><div class="slider">🌞</div></div>
+  </div>
+</header>
+<!-- Main content showing core and soft skills -->
+<main>
+  <section class="skills-section">
+
+    <!-- Section title -->
+    <h1 class="section-title">Skills</h1>
+
+    <!-- Tab buttons to switch between core and soft skills -->
+    <div class="tab-buttons">
+     <button class="tab-btn active" onclick="showTab('core', event)">Core Skills</button>
+	 <button class="tab-btn" onclick="showTab('soft', event)">Soft Skills</button>
+
+    </div>
+
+      <!-- Core Skills tab (visible by default) -->
+	  <div class="skill-tab active" id="core">
+	  <div class="single-skill-box">
+		<ul>
+		  <li>Simple website projects development.</li>
+		  <li>Beginner in game development (Developed "Wajas" — a choice-based game).</li>
+		  <li>Understanding of Databases.</li>
+		  <li>Experienced in Git/GitHub for collaborative projects and version tracking.</li>
+		  <li>Hands-on with Linux tools, basic penetration testing and network defense strategies.</li>
+		  <li>Foundational knowledge of networking and cybersecurity.</li>
+		  <li>Basic experience with supervised models, pandas, numpy, and data visualization.</li>
+		</ul>
+	  </div>
+	</div>
+
+
+    <!-- Soft Skills tab (hidden by default) -->
+	<div class="skill-tab" id="soft">
+	  <div class="single-skill-box">
+		<ul>
+		  <li>Problem Solving.</li>
+		  <li>Critical Thinking.</li>
+		  <li>Team Collaboration.</li>
+		  <li>Time Management.</li>
+		  <li>Fast Learner.</li>
+		  <li>Adaptability.</li>
+		</ul>
+	  </div>
+	</div>
+
+
+  </section>
+</main>
+
+<!-- Footer with GitHub icon and copyright -->
+<footer>
+  <p>© 2025 Wajan Albaqami</p>
+  <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+    <!-- GitHub link with icon -->
+    <img src="github-logo.png" alt="GitHub" class="github-icon" />
+  </a>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+<!--
+This is the HTML file for the "Education" page on Wajan's CV website.
+It includes:
+- A header with logo, navigation menu, and dark/light mode toggle.
+- A main section with information about Wajan’s university education and an image of the university logo.
+- A footer with copyright and a link to GitHub.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the page responsive on all screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajan Albaqami | Education</title>
+
+  <!-- Favicon shown in the browser tab -->
+  <link rel="icon" href="WB-Maroon-logo.png" id="favicon">
+  <!-- Google Fonts used for the text -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+
+  <!-- Main CSS file for styling -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- JavaScript file for functionality like dark/light mode -->
+  <script src="script.js" defer></script>
+
+  <!-- Keywords to help search engines find this page -->
+  <meta name="keywords" content="Wajan, Education, Qassim University, CS Degree" />
+</head>
+<body>
+
+<!-- Header section with logo, navigation links, and toggle switch -->
+<header id="main-header" class="light">
+  <div class="logo">
+    <!-- Website logo -->
+    <img src="WB-logo.png" alt="Logo" id="header-logo">
+  </div>
+  <nav>
+    <!-- Navigation menu to go to other pages -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="education.html" class="active">Education</a></li><!-- Active page -->
+      <li><a href="languages.html">Languages</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Dark/Light mode toggle button -->
+  <div class="toggle-mode" id="toggle-btn">
+    <div class="slider">🌞</div>
+  </div>
+</header>
+
+<!-- Main section with educational background info -->
+<main class="education-layout">
+  <!-- Page title aligned to the left -->
+  <h1 class="page-title left">Education</h1>
+  <section class="education-box">
+    <!-- Qassim University logo -->
+    <img src="https://www.qu.edu.sa/wp-content/uploads/2025/02/qu_log.svg" alt="Qassim University Logo" class="education-image" />
+	<!-- Description of education background -->
+    <p>
+      I'm a Computer Science student at the College of Computer, Qassim University. I'm ambitious and dedicated, always striving to excel academically and push my limits. I take pride in my strong academic performance and consistently work hard to achieve my goals. Currently, I am about to graduate with a Bachelor’s degree and eager to embrace new challenges in my career.
+    </p>
+	<!-- Short note showing college/department -->
+    <div style="text-align: center;">
+      Computer Science – College of Computer
+    </div>
+  </section>
+</main>
+
+<!-- Footer section with copyright -->
+<footer>
+  <p>© 2025 Wajan Albaqami</p>
+  <a href="https://github.com/WajanMo" target="_blank" aria-label="GitHub Profile">
+    <!-- GitHub icon linking to Wajan's profile -->
+    <img src="github-logo.png" alt="GitHub" class="github-icon">
+  </a>
+</footer>
+
+</body>
+</html>
