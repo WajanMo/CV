@@ -13,17 +13,17 @@ html, body {
 
 /* Base body styles */
 body {
-  font-family: 'Open Sans', sans-serif;  /* Set default font */
+  font-family: 'Open Sans', sans-serif;  
   margin: 0;
   padding: 0;
-  background-color: white;               /* Default background for light mode */
-  color: #390007;                        /* Default text color */
-  animation: fadeIn 1s ease-in;          /* Page fade-in animation on load */
-  transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth mode transition */
-  overflow-x: hidden;                    /* Prevent horizontal scrolling */
-  min-height: 100vh;                     /* Ensure body fills screen height */
-  display: flex;                         /* Enable flexbox for vertical layout */
-  flex-direction: column;               /* Stack header > content > footer */
+  background-color: white;              
+  color: #390007;                       
+  animation: fadeIn 1s ease-in;         
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  overflow-x: hidden;                    
+  min-height: 100vh;                    
+  display: flex;                        
+  flex-direction: column;              
 }
 
 /* Fade-in animation */
@@ -51,7 +51,7 @@ a:hover {
 /* ====== Header ====== */
 header {
   display: flex;
-  align-items: center;        /* Vertically center items */
+  align-items: center;        /* center items */
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: white;
@@ -155,9 +155,9 @@ header.dark .toggle-mode .slider {
 /* ====== Main Content Hero Section (Homepage) ====== */
 main.hero {
   display: flex;
-  align-items: center;                      /* Center content vertically */
-  justify-content: center;                 /* Center content horizontally */
-  height: calc(100vh - 120px);             /* Full height minus header/footer */
+  align-items: center;                     
+  justify-content: center;                
+  height: calc(100vh - 120px);             
   background-color: white;
   text-align: center;
   padding-top: 2rem;
@@ -166,8 +166,8 @@ main.hero {
   padding-bottom: 0;
   transition: background-color 0.3s ease;
   position: relative;
-  overflow: hidden;                        /* Prevent overflow */
-  flex-grow: 1;                            /* Take remaining vertical space */
+  overflow: hidden;                      
+  flex-grow: 1;                           
 }
 
 /* Hero background in dark mode */
@@ -320,6 +320,7 @@ body.dark #header-logo {
 
 /* ====== Responsive Layout (Tablet & Mobile) ====== */
 @media (max-width: 768px) {
+  /* Make nav links go in a row and scroll sideways if needed */
   nav ul {
     flex-direction: row;         
     overflow-x: auto;            
@@ -330,24 +331,28 @@ body.dark #header-logo {
     scrollbar-width: none;     
   }
   
+  /* Make sure nav doesn't go outside screen width */
   header nav {
     overflow-x: auto;          
     max-width: 100vw;          
   }
-
+  
+  /* Prevent nav items from wrapping to next line */
   nav ul {
     flex-wrap: nowrap;         
   }
 
-
+  /* Hide scrollbar in WebKit browsers like Chrome */
   nav ul::-webkit-scrollbar {
     display: none;          
   }
   
+  /* Make each nav item keep its size and not shrink */
   nav ul li {
     flex: 0 0 auto;         
   }
   
+  /* Style for the dark/light mode toggle switch */
   .toggle-mode {
     width: 50px;
     height: 25px;
@@ -356,7 +361,8 @@ body.dark #header-logo {
     background-color: #390007;
     flex-shrink: 0;
   }
-
+  
+  /* Style for the sliding circle inside the toggle */
   .toggle-mode .slider {
     width: 21px;
     height: 21px;
@@ -365,14 +371,15 @@ body.dark #header-logo {
     font-size: 14px;
     transition: left 0.3s ease, background-color 0.3s ease;
   }
-
+  
+  /* When in dark mode, move the slider to the right */
   header.dark .toggle-mode .slider {
     left: 27px; 
     background-color: #390007;
     color: white;
   }
 
-  
+  /* Make icons inside the toggle smaller */
   .toggle-mode .slider i,
   .toggle-mode .slider svg {
     font-size: 12px;
@@ -380,18 +387,20 @@ body.dark #header-logo {
   }
 
  /* =====  Footer  ===== */
- 
+  /* Arrange footer content in a row and center it */
   .footer-content {
     flex-direction: row;        
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
   }
-
+  
+  /* Remove margin from footer text */
   .footer-content p {
     margin: 0;
   }
   
+  /* Center icons or links inside footer */
   footer .footer-content a {
     display: inline-flex;
     align-items: center;
@@ -1193,6 +1202,7 @@ body.dark .submit-btn:hover {
 
 /* ====== Responsive Styles (Mobile) ====== */
 @media (max-width: 768px) {
+  /* Set the layout of the contact section in a column (image goes under the form) */
   .contact-main {
 	display: flex;
     flex-direction: column-reverse;
@@ -1200,14 +1210,16 @@ body.dark .submit-btn:hover {
 	justify-content: center;
     padding: 2rem 1rem;
   }
-
+  
+  /* Style the image section for small screens */
   .image-overlay {
     position: static;                       /* Reset positioning */
     width: 100%;                            /* Full width on small screens */
     max-width: 100%;
     margin-top: 2rem;                    
   }
-
+  
+  /* Style the form area */
   .form-area {
     margin: 0 auto;                         /* Center form horizontally */
     text-align: center;                     /* Center text inside form */
@@ -1216,10 +1228,12 @@ body.dark .submit-btn:hover {
     max-width: 500px;
   }
 
+  /* Center the start chat button */
   .start-chat-btn {
     align-self: center;
   }
   
+  /* Make sure the page height adjusts properly on mobile */
    html, body {
     height: auto;             
     min-height: 100vh;
